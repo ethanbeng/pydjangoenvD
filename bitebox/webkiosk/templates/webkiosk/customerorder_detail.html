@@ -1,0 +1,31 @@
+{% extends 'webkiosk/base_template.html' %}
+
+{% block pagetitle %}Customer Orders{% endblock %}
+
+
+{% block maincontent %}
+
+<h2 class="section-header container">{{ customer.firstname }} {{ customer.lastname }}</h2>
+
+<table>  
+    <tr>           
+    <th>Order Number</th>
+    <th>Date and Time</th>        
+    <th>Customer Name</th>               
+    <th>Food Name</th>               
+    <th>Quantity</th>        
+    <th>Price</th>           
+    </tr>
+    {% for order in customerorders %}        
+    <tr>         
+    <td>Order #{{ order.order.id }}</td>               
+    <td>{{ order.order.orderdatetime }}</td>       
+    <td>{{ order.order.customer.firstname }} {{ order.order.customer.lastname }}</td>       
+    <td>{{ order.food.name }}</td>        
+    <td>{{ order.quantity }}</td>                
+    <td>Php{{ order.total_price }}</td>               
+    </tr>
+    {% endfor %}
+        
+    </table>
+{% endblock %}

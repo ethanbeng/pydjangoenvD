@@ -1,0 +1,103 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    background-color:whitesmoke;
+    font-family: Montserrat;
+    margin: 0;
+    padding: 0;  
+}
+
+.nav ul {
+    margin: 0;
+}
+
+.nav li{
+    display:inline;
+}
+    
+.nav a{
+    display: inline-block;
+    padding: .5em;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+
+.main-nav li{
+    padding: 0 5%;
+}
+
+.nav a:hover{
+    background-color: rgba(255,255,255, .3)
+}
+
+.main-header{
+    background-color: #a9a9a9;
+}
+
+.main-section{
+    padding: 0;
+    margin: 1em;
+}
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.section-header {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.header-logo{
+    display: block;
+    height: 100px;
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.food-name{
+    display:inline;
+    font-weight: bold;
+    width: 11%;
+    font-size: 1.5em;
+    padding: 1em;
+    
+
+}
+
+.food-price{
+    width: 42%;
+    padding: 1em;
+
+}
+
+.btn{
+    max-width: 19%;
+    text-decoration: none;
+    background-color: lightgray;
+    color: #25242b;
+    padding: .3em;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.food-input{
+    display: inline;
+    width: 11%;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1em;
+    
+}

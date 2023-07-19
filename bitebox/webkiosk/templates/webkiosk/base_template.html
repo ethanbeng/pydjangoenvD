@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>bITEbox Web Kiosk - {% block pagetitle %}{% endblock %}</title>
+    <link rel="preconnect" href="http://font.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'webkiosk/styles/main.css' %}">
+  </head>
+  <body>
+    <header class="main-header">
+      
+
+      <img class="header-logo" src="{% static 'webkiosk/images/logo.png' %}">
+      <p class="section-header container">bitebitebitebitebite</p>
+      {% block mainnav %}
+    <nav class="nav main-nav">
+      <ul>
+        <li><a href="{% url 'webkiosk:food-list' %}">Menu</a></li>
+        <li><a href="{% url 'webkiosk:food-create' %}">Add Food</a></li>
+        <li><a href="{% url 'webkiosk:order-list' %}">Orders</a></li>
+        <li><a href="{% url 'webkiosk:food-order' %}">Add Order</a></li>
+        <li><a href="{% url 'webkiosk:customer-list' %}">Customers</a></li>
+        <li><a href="{% url 'webkiosk:customer-create' %}">Add Customer</a></li>
+      </ul>
+    </nav>
+{% endblock %}
+    </header>
+
+    
+    <main class="main-section container">
+        {% block maincontent %}
+        
+        {% endblock %}
+    </main>
+    {% if user.is_authenticated %}
+    <form action="{% url 'webkiosk:logout' %}" method="post" class="logout-form">
+        {% csrf_token %}
+        <button class="btn" type="submit">Logout</button>
+    </form>
+{% endif %}
+  </body>
+</html>

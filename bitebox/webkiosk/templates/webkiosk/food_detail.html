@@ -1,0 +1,11 @@
+{% extends 'webkiosk/base_template.html' %}
+
+{% block pagetitle %}{{ food.name }}{% endblock %}
+
+{% block maincontent %}
+<h2 class="section-header container">{{ food.name }}</h2>
+<ul>
+<p>Description: {{ food.description }}</p>
+<p>Price: Php{{ food.price }}</p>
+</ul>
+{% endblock %}
